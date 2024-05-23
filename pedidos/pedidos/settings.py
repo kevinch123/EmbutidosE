@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-szzn%b35b904=!(t(e=h$^h0s2rs0jruwzj60d3_*8uaqmd8qc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://embutidosweb.azurewebsites.net/']
 
 
 # Application definition
@@ -76,10 +76,18 @@ WSGI_APPLICATION = 'pedidos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'embutidosdb',
+        'USER': 'kevinchi78',
+        'PASSWORD': 'f31cpltm#',
+        'HOST': 'embutidosbd.postgres.database.azure.com',  # O la IP del servidor de tu base de datos
+        'PORT': '5432',  
+        'OPTIONS': {
+            'sslmode':'require'
+        },
     }
 }
+
 
 
 # Password validation
